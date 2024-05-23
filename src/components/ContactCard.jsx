@@ -2,6 +2,7 @@ import React from "react";
 import { TrashIcon, UserCircleIcon } from "@heroicons/react/outline";
 
 function ContactCard(props) {
+  // console.log(props);
   const { id, name, email } = props.contact;
 
   return (
@@ -15,7 +16,10 @@ function ContactCard(props) {
           </div>
         </div>
 
-        <button className="text-red-500 hover:text-red-800">
+        <button
+          className="text-red-500 hover:text-red-800"
+          onClick={() => props.clickHandler(id)}
+        >
           <TrashIcon className="h-7 w-7 " />
         </button>
       </li>
