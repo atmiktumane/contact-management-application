@@ -26,17 +26,17 @@ function AddContact(props) {
 
   return (
     <>
-      <div className="w-full h-96 bg-zinc-500">
+      <div className="w-full h-96  bg-gray-600">
         {/* Add Contact Heading */}
         <div className="h-16 flex items-center justify-center text-white">
           <h2 className="text-lg">Add Contact</h2>
         </div>
 
-        <div className="max-w-sm mx-auto bg-white p-8 rounded-lg">
+        <div className="max-w-sm mx-auto bg-zinc-700 px-20 py-8  rounded-lg">
           <form onSubmit={addData}>
             {/* Label Input for Name */}
             <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-bold mb-2">
+              <label className="block text-white text-sm font-bold mb-2">
                 Name
               </label>
               <input
@@ -50,7 +50,7 @@ function AddContact(props) {
 
             {/* Label Input for Email */}
             <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-bold mb-2">
+              <label className="block text-white text-sm font-bold mb-2">
                 Email
               </label>
               <input
@@ -65,7 +65,7 @@ function AddContact(props) {
             {/* Submit Button */}
 
             <button
-              className="bg-blue-500 hover:bg-blue-700 active:bg-red-300 text-white font-bold py-2 px-4 rounded"
+              className="bg-teal-400 text-zinc-800 hover:text-zinc-300 hover:bg-teal-800 active:bg-red-300 font-semibold py-2 px-4 rounded"
               type="submit"
             >
               Add

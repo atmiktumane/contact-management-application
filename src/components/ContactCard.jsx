@@ -7,20 +7,17 @@ function ContactCard(props) {
 
   return (
     <>
-      <li className="mb-4 p-4 flex items-center justify-between bg-zinc-200 ">
+      <li className="mb-4 p-4 flex items-center justify-between bg-slate-400 ">
         <div className="flex">
           <UserCircleIcon className="h-7 w-7 mr-4 mt-3" />
           <div className="">
             <p className="text-lg">{name}</p>
-            <p className="text-gray-600">{email}</p>
+            <p>{email}</p>
           </div>
         </div>
 
-        <button
-          className="text-red-500 hover:text-red-800"
-          onClick={() => props.clickHandler(id)}
-        >
-          <TrashIcon className="h-7 w-7 " />
+        <button onClick={() => props.clickHandler(id)}>
+          <TrashIcon className="h-7 w-7 text-red-700 hover:text-red-900" />
         </button>
       </li>
     </>
