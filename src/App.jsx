@@ -4,6 +4,7 @@ import AddContact from "./components/AddContact";
 import ContactList from "./components/ContactList";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ContactDetails from "./components/ContactDetails";
+import DeleteContact from "./components/DeleteContact";
 
 function App() {
   const LOCAL_STORAGE_KEY = "contacts";
@@ -31,6 +32,14 @@ function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
   }, [contacts]);
 
+  const deleteContactHandler = (id) => {
+    const newContactList = contacts.filter((contact) => {
+      return contact.id !== id;
+    });
+
+    setContacts(newContactList);
+  };
+
   return (
     <>
       <Router>
@@ -53,6 +62,11 @@ function App() {
           />
 
           <Route path="/contact/:id" element={<ContactDetails />} />
+
+          <Route
+            path="/contact/:id/delete"
+            element={<DeleteContact getContactId={deleteContactHandler} />}
+          />
         </Routes>
       </Router>
     </>

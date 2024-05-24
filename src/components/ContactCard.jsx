@@ -18,9 +18,12 @@ function ContactCard(props) {
           </Link>
         </div>
 
-        <button onClick={() => props.clickHandler(id)}>
+        <Link to={`/contact/${id}/delete`} state={{ data }}>
           <TrashIcon className="h-7 w-7 text-red-700 hover:text-red-900" />
-        </button>
+        </Link>
+        {/* <button onClick={() => props.clickHandler(id)}>
+          <TrashIcon className="h-7 w-7 text-red-700 hover:text-red-900" />
+        </button> */}
       </li>
     </>
   );
