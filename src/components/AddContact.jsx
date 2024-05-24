@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
 function AddContact(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+
+  const navigate = useNavigate();
 
   const addData = (e) => {
     e.preventDefault();
@@ -22,14 +25,16 @@ function AddContact(props) {
 
     setName("");
     setEmail("");
+
+    navigate("/");
   };
 
   return (
     <>
-      <div className="w-full h-96  bg-gray-600">
+      <div className="w-full h-screen  bg-gray-600 p-14">
         {/* Add Contact Heading */}
         <div className="h-16 flex items-center justify-center text-white">
-          <h2 className="text-lg">Add Contact</h2>
+          <h2 className="text-xl font-semibold">Add Contact</h2>
         </div>
 
         <div className="max-w-sm mx-auto bg-zinc-700 px-20 py-8  rounded-lg">

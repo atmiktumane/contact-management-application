@@ -1,5 +1,6 @@
 import React from "react";
 import ContactCard from "./ContactCard";
+import { Link } from "react-router-dom";
 
 function ContactList(props) {
   // console.log(props);
@@ -18,9 +19,17 @@ function ContactList(props) {
 
   return (
     <>
-      <div className="min-h-64 bg-stone-400 flex items-center justify-center">
+      <div className="min-h-screen bg-stone-400 flex items-center justify-center">
         <div className="bg-white shadow-md m-6 rounded p-6  max-w-md w-full">
-          <h3 className="text-xl font-semibold mb-4">Contact List</h3>
+          <div className="flex justify-between mb-6 ">
+            <h3 className="text-xl font-semibold mt-1">Contact List</h3>
+            <Link to="/add-contact">
+              <button className="bg-emerald-400 hover:bg-emerald-600 px-3 py-1 rounded-md ">
+                Add Contact
+              </button>
+            </Link>
+          </div>
+
           <ul>{renderContactList}</ul>
         </div>
       </div>

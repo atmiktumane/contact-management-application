@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import AddContact from "./components/AddContact";
 import ContactList from "./components/ContactList";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const LOCAL_STORAGE_KEY = "contacts";
@@ -31,9 +32,26 @@ function App() {
 
   return (
     <>
-      <Header />
-      <AddContact addContactHandler={addContactHandler} />
-      <ContactList contacts={contacts} getContactId={removeContactHandler} />
+      <Router>
+        <Header />
+
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <ContactList
+                contacts={contacts}
+                getContactId={removeContactHandler}
+              />
+            }
+          />
+
+          <Route
+            path="/add-contact"
+            element={<AddContact addContactHandler={addContactHandler} />}
+          />
+        </Routes>
+      </Router>
     </>
   );
 }
