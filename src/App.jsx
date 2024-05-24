@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import AddContact from "./components/AddContact";
 import ContactList from "./components/ContactList";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ContactDetails from "./components/ContactDetails";
 
 function App() {
   const LOCAL_STORAGE_KEY = "contacts";
@@ -50,6 +51,8 @@ function App() {
             path="/add-contact"
             element={<AddContact addContactHandler={addContactHandler} />}
           />
+
+          <Route path="/contact/:id" element={<ContactDetails />} />
         </Routes>
       </Router>
     </>
