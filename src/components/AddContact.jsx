@@ -41,11 +41,15 @@ function AddContact(props) {
           <form onSubmit={addData}>
             {/* Label Input for Name */}
             <div className="mb-4">
-              <label className="block text-white text-sm font-bold mb-2">
+              <label
+                htmlFor="contactName"
+                className="block text-white text-sm font-bold mb-2"
+              >
                 Name
               </label>
               <input
                 type="text"
+                id="contactName"
                 placeholder="Enter the Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -55,11 +59,15 @@ function AddContact(props) {
 
             {/* Label Input for Email */}
             <div className="mb-4">
-              <label className="block text-white text-sm font-bold mb-2">
+              <label
+                htmlFor="contactEmail"
+                className="block text-white text-sm font-bold mb-2"
+              >
                 Email
               </label>
               <input
                 type="email"
+                id="contactEmail"
                 placeholder="Enter Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
