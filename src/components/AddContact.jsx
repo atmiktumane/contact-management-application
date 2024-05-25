@@ -49,6 +49,7 @@ function AddContact(props) {
               </label>
               <input
                 type="text"
+                name="contactName"
                 id="contactName"
                 placeholder="Enter the Name"
                 value={name}
@@ -67,6 +68,7 @@ function AddContact(props) {
               </label>
               <input
                 type="email"
+                name="contactEmail"
                 id="contactEmail"
                 placeholder="Enter Email"
                 value={email}
