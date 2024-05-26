@@ -4,17 +4,18 @@ import { Link } from "react-router-dom";
 
 function ContactCard(props) {
   // console.log(props);
-  const { id, name, email } = props.contact;
+  const { id, name, email, time } = props.contact;
   const data = props.contact;
 
   return (
     <>
       <li className="mb-4 p-4 flex items-center justify-between bg-slate-400 ">
         <div className="flex">
-          <UserCircleIcon className="h-7 w-7 mr-4 mt-3" />
+          <UserCircleIcon className="h-8 w-8 mr-4 my-auto" />
           <Link to={`/contact/${id}`} state={{ data }}>
             <p className="text-lg">{name}</p>
             <p>{email}</p>
+            <p className="text-xs text-grey-300 mt-2">{time}</p>
           </Link>
         </div>
 

@@ -15,10 +15,13 @@ function AddContact(props) {
       return;
     }
 
+    const date = new Date();
+
     const newContact = {
       id: uuidv4(), // generate unique id for each contact
       name,
       email,
+      time: `${date.toLocaleTimeString()} ${date.toLocaleDateString()}`,
     };
 
     props.addContactHandler(newContact);

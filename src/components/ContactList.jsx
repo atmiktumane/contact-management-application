@@ -20,25 +20,43 @@ function ContactList(props) {
     );
   });
 
+  const clearAllContacts = () => {
+    let flag = true;
+    console.log("clear all contacts");
+    props.clearAllHandler(flag);
+    flag = false;
+  };
+
   return (
     <>
       <div className="min-h-screen bg-stone-400 flex items-center justify-center">
-        <div className="bg-white shadow-md m-6 rounded p-6  max-w-md w-full">
-          <div className="flex justify-between mb-6 ">
+        <div className="bg-white shadow-md m-6 rounded p-6  max-w-xl w-full">
+          <div className="flex justify-between mb-6">
             <h3 className="text-xl font-semibold mt-1">Contact List</h3>
+
             <Link
               to="/add-contact"
-              className="bg-emerald-400 hover:bg-emerald-600 px-3 py-1 rounded-md"
+              className="bg-emerald-600 hover:bg-emerald-800 px-3 py-1 rounded-md text-gray-200"
             >
               Add Contact
             </Link>
 
             <button
               onClick={() => setShow(!show)}
-              className="bg-cyan-400 hover:bg-cyan-600 px-3 py-1 rounded-md"
+              className="bg-cyan-600 hover:bg-cyan-800 px-3 py-1 rounded-md text-gray-200"
             >
               {show ? "hide contacts" : "show contacts"}
             </button>
+
+            <button
+              onClick={clearAllContacts}
+              className="bg-red-600 hover:bg-red-800 px-3 py-1 rounded-md text-gray-200"
+            >
+              Clear All
+            </button>
+            <p className="bg-zinc-500 mt-1 w-7 h-7 text-white rounded-full flex items-center justify-center">
+              {props.contacts.length}
+            </p>
           </div>
 
           {/* <ul>{show && renderContactList}</ul> */}

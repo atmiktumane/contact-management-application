@@ -40,6 +40,13 @@ function App() {
     setContacts(newContactList);
   };
 
+  const clearAllHandler = (flag) => {
+    if (flag) {
+      setContacts([]);
+    }
+    flag = false;
+  };
+
   return (
     <>
       <Router>
@@ -52,6 +59,7 @@ function App() {
               <ContactList
                 contacts={contacts}
                 getContactId={removeContactHandler}
+                clearAllHandler={clearAllHandler}
               />
             }
           />

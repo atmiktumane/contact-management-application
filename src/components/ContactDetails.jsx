@@ -18,7 +18,7 @@ function ContactDetails() {
 
           <Link to="/">
             <button className="bg-cyan-500 hover:bg-cyan-600 px-3 py-1 rounded text-white mt-7">
-              Contact List
+              Back to Contact List
             </button>
           </Link>
         </div>
