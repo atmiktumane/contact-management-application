@@ -33,7 +33,7 @@ function AddContact(props) {
   };
 
   return (
-    <>
+    <section className="add-contact">
       <div className="w-full h-screen  bg-gray-600 p-14">
         {/* Add Contact Heading */}
         <div className="h-16 flex items-center justify-center text-white">
@@ -91,7 +91,7 @@ function AddContact(props) {
           </form>
         </div>
       </div>
-    </>
+    </section>
   );
 }
 

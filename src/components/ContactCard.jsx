@@ -8,8 +8,8 @@ function ContactCard(props) {
   const data = props.contact;
 
   return (
-    <>
-      <li className="mb-4 p-4 flex items-center justify-between bg-slate-400 ">
+    <section className="contact-card">
+      <li className="mb-4 p-4 flex items-center justify-between bg-gray-200 shadow hover:shadow-cyan-500/40 hover:shadow-xl ">
         <div className="flex">
           <UserCircleIcon className="h-8 w-8 mr-4 my-auto" />
           <Link to={`/contact/${id}`} state={{ data }}>
@@ -26,7 +26,7 @@ function ContactCard(props) {
           <TrashIcon className="h-7 w-7 text-red-700 hover:text-red-900" />
         </button> */}
       </li>
-    </>
+    </section>
   );
 }
 

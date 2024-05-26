@@ -28,11 +28,13 @@ function ContactList(props) {
   };
 
   return (
-    <>
-      <div className="min-h-screen bg-stone-400 flex items-center justify-center">
-        <div className="bg-white shadow-md m-6 rounded p-6  max-w-xl w-full">
+    <section className="contact-list">
+      <div className="min-h-screen bg-cyan-900 flex items-center justify-center">
+        <div className="bg-gray-900 shadow-md m-6 rounded p-6  max-w-xl w-full">
           <div className="flex justify-between mb-6">
-            <h3 className="text-xl font-semibold mt-1">Contact List</h3>
+            <h3 className="text-xl font-semibold mt-1 text-white">
+              Contact List
+            </h3>
 
             <Link
               to="/add-contact"
@@ -63,7 +65,7 @@ function ContactList(props) {
           <ul>{show ? renderContactList : ""}</ul>
         </div>
       </div>
-    </>
+    </section>
   );
 }
 

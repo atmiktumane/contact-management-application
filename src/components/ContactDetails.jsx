@@ -7,7 +7,7 @@ function ContactDetails() {
   const { state } = location;
   const data = state?.data;
   return (
-    <>
+    <section className="contact-details">
       <div className="h-screen w-full bg-slate-500 flex items-center justify-center">
         <div className="h-96 w-96 bg-white text-center">
           <UserCircleIcon className="h-40 w-40 mx-auto mt-10" />
@@ -23,7 +23,7 @@ function ContactDetails() {
           </Link>
         </div>
       </div>
-    </>
+    </section>
   );
 }
 

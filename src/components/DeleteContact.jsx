@@ -13,7 +13,7 @@ function DeleteContact(props) {
     navigate("/");
   };
   return (
-    <>
+    <section className="delete-contact">
       <div className="h-screen w-full bg-zinc-400 flex items-center justify-center">
         <div className="h-96 w-96 bg-white text-center p-4">
           <UserCircleIcon className="h-44 w-44 mx-auto" />
@@ -41,7 +41,7 @@ function DeleteContact(props) {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 }
 
