@@ -7,6 +7,10 @@ export const ContactCard = (props) => {
   const { id, name, email, time } = props.contact;
   const data = props.contact;
 
+  const deleteItemHandler = (id) => {
+    props.getContactId(id);
+  };
+
   return (
     <section className="contact-card">
       <li className="mb-4 p-4 flex items-center justify-between bg-gray-200 shadow hover:shadow-cyan-500/40 hover:shadow-xl ">
@@ -19,9 +23,15 @@ export const ContactCard = (props) => {
           </Link>
         </div>
 
-        <Link>
-          <TrashIcon className="h-7 w-7 text-red-700 hover:text-red-900" />
-        </Link>
+        <button
+          onClick={() => {
+            window.confirm(
+              `Are you sure, you want to delete this Contact : ${name}`
+            ) && deleteItemHandler(id);
+          }}
+        >
+          <TrashIcon className="w-7 h-7 text-red-700 hover:text-red-900" />
+        </button>
       </li>
     </section>
   );

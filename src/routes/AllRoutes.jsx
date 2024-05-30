@@ -15,7 +15,7 @@ export const AllRoutes = () => {
     setContacts([...contacts, contact]);
   };
 
-  const removeContactHandler = (id) => {
+  const deleteContactHandler = (id) => {
     const newContactList = contacts.filter((contact) => {
       return contact.id !== id;
     });
@@ -39,7 +39,7 @@ export const AllRoutes = () => {
         element={
           <ContactListPage
             contacts={contacts}
-            getContactId={removeContactHandler}
+            deleteContactHandler={deleteContactHandler}
             clearAllHandler={clearAllHandler}
           />
         }

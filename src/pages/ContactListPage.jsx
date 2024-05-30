@@ -7,15 +7,15 @@ export const ContactListPage = (props) => {
 
   const [show, setShow] = useState(true);
 
-  const deleteContactHandler = (id) => {
-    props.getContactId(id);
+  const getContactId = (id) => {
+    props.deleteContactHandler(id);
   };
   const renderContactList = props.contacts.map((contact) => {
     return (
       <ContactCard
-        contact={contact}
         key={contact.id}
-        clickHandler={deleteContactHandler}
+        contact={contact}
+        getContactId={getContactId}
       />
     );
   });
