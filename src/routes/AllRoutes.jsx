@@ -15,16 +15,16 @@ export const AllRoutes = () => {
     setContacts([...contacts, contact]);
   };
 
+  const clearAllContactsHandler = () => {
+    setContacts([]);
+  };
+
   const deleteContactHandler = (id) => {
     const newContactList = contacts.filter((contact) => {
       return contact.id !== id;
     });
 
     setContacts(newContactList);
-  };
-
-  const clearAllHandler = () => {
-    setContacts([]);
   };
 
   useEffect(() => {
@@ -39,8 +39,8 @@ export const AllRoutes = () => {
         element={
           <ContactListPage
             contacts={contacts}
+            clearAllContactsHandler={clearAllContactsHandler}
             deleteContactHandler={deleteContactHandler}
-            clearAllHandler={clearAllHandler}
           />
         }
       />

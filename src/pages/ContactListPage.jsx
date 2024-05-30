@@ -10,6 +10,7 @@ export const ContactListPage = (props) => {
   const getContactId = (id) => {
     props.deleteContactHandler(id);
   };
+
   const renderContactList = props.contacts.map((contact) => {
     return (
       <ContactCard
@@ -20,11 +21,8 @@ export const ContactListPage = (props) => {
     );
   });
 
-  const clearAllContacts = () => {
-    let flag = true;
-    console.log("clear all contacts");
-    props.clearAllHandler(flag);
-    flag = false;
+  const clearAllContacts = (a) => {
+    props.clearAllContactsHandler();
   };
 
   return (
@@ -51,11 +49,18 @@ export const ContactListPage = (props) => {
             </button>
 
             <button
-              onClick={clearAllContacts}
-              className="bg-red-600 hover:bg-red-800 px-3 py-1 rounded-md text-gray-200"
+              onClick={() => {
+                return (
+                  window.confirm(
+                    "Are you sure, you want to Delete All Contacts ?"
+                  ) && clearAllContacts(1)
+                );
+              }}
+              className="bg-red-600 hover:bg-red-800 px-3 py-1 rounded-full text-white"
             >
               Clear All
             </button>
+
             <p className="bg-zinc-500 mt-1 w-7 h-7 text-white rounded-full flex items-center justify-center">
               {props.contacts.length}
             </p>
