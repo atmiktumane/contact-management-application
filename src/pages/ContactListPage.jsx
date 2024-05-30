@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import ContactCard from "./ContactCard";
 import { Link } from "react-router-dom";
+import { ContactCard } from "../components";
 
-function ContactList(props) {
+export const ContactListPage = (props) => {
   // console.log(props);
 
   const [show, setShow] = useState(true);
@@ -67,6 +67,4 @@ function ContactList(props) {
       </div>
     </section>
   );
-}
-
-export default ContactList;
+};

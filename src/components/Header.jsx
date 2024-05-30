@@ -1,6 +1,6 @@
 import React from "react";
 
-function Header() {
+export const Header = () => {
   return (
     <header>
       <div className="w-full h-24 bg-slate-800 flex items-center justify-center">
@@ -10,6 +10,4 @@ function Header() {
       </div>
     </header>
   );
-}
-
-export default Header;
+};

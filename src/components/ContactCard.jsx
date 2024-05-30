@@ -2,7 +2,7 @@ import React from "react";
 import { TrashIcon, UserCircleIcon } from "@heroicons/react/outline";
 import { Link } from "react-router-dom";
 
-function ContactCard(props) {
+export const ContactCard = (props) => {
   // console.log(props);
   const { id, name, email, time } = props.contact;
   const data = props.contact;
@@ -19,15 +19,10 @@ function ContactCard(props) {
           </Link>
         </div>
 
-        <Link to={`/contact/${id}/delete`} state={{ data }}>
+        <Link>
           <TrashIcon className="h-7 w-7 text-red-700 hover:text-red-900" />
         </Link>
-        {/* <button onClick={() => props.clickHandler(id)}>
-          <TrashIcon className="h-7 w-7 text-red-700 hover:text-red-900" />
-        </button> */}
       </li>
     </section>
   );
-}
-
-export default ContactCard;
+};

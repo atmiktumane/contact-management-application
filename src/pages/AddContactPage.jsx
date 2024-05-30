@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
-function AddContact(props) {
+export const AddContactPage = (props) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
@@ -93,6 +93,4 @@ function AddContact(props) {
       </div>
     </section>
   );
-}
-
-export default AddContact;
+};

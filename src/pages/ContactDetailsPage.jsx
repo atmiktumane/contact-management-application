@@ -2,7 +2,7 @@ import { UserCircleIcon } from "@heroicons/react/outline";
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
-function ContactDetails() {
+export const ContactDetailsPage = () => {
   const location = useLocation();
   const { state } = location;
   const data = state?.data;
@@ -25,6 +25,4 @@ function ContactDetails() {
       </div>
     </section>
   );
-}
-
-export default ContactDetails;
+};
