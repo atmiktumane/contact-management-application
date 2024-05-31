@@ -3,18 +3,18 @@ import { createSlice } from "@reduxjs/toolkit";
 const favouritesSlice = createSlice({
   name: "counter",
   initialState: {
-    favouritesList: [],
+    favouriteList: [],
   },
   reducers: {
     add(state, actions) {
-      const updatedList = state.favouritesList.concat(actions.payload);
-      return { ...state, favouritesList: updatedList };
+      const updatedList = state.favouriteList.concat(actions.payload);
+      return { ...state, favouriteList: updatedList };
     },
     remove(state, actions) {
-      const updatedList = state.favouritesList.filter(
+      const updatedList = state.favouriteList.filter(
         (item) => item.id !== actions.payload.id
       );
-      return { ...state, favouritesList: updatedList };
+      return { ...state, favouriteList: updatedList };
     },
   },
 });

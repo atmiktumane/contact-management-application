@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import { AddContactPage, ContactDetailsPage, ContactListPage } from "../pages";
+import {
+  AddContactPage,
+  ContactDetailsPage,
+  ContactListPage,
+  FavouriteContactsPage,
+} from "../pages";
 
 export const AllRoutes = () => {
   const LOCAL_STORAGE_KEY = "contacts";
@@ -51,6 +56,8 @@ export const AllRoutes = () => {
       />
 
       <Route path="/contact/:id" element={<ContactDetailsPage />} />
+
+      <Route path="/favourite" element={<FavouriteContactsPage />} />
     </Routes>
   );
 };
