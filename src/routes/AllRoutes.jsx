@@ -37,6 +37,11 @@ export const AllRoutes = () => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
   }, [contacts]);
 
+  useEffect(() => {
+    const defaultContact = { name: "user1", email: "user1@example.com" };
+    setContacts([...contacts, defaultContact]);
+  }, []);
+
   return (
     <Routes>
       <Route

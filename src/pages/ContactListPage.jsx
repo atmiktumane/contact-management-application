@@ -11,13 +11,9 @@ export const ContactListPage = (props) => {
     props.deleteContactHandler(id);
   };
 
-  const renderContactList = props.contacts.map((contact) => {
+  const renderContactList = props.contacts.map((contact, index) => {
     return (
-      <ContactCard
-        key={contact.id}
-        contact={contact}
-        getContactId={getContactId}
-      />
+      <ContactCard key={index} contact={contact} getContactId={getContactId} />
     );
   });
 
